@@ -1,0 +1,44 @@
+Python 是基于协议进行编程的
+
+
+1.交互环境
+    ipython
+    notebook        浏览器实现交互，比原生的python交互模式更人性化
+
+    pip install 安装
+
+    启动：
+        ipython notebook
+
+    浏览器内：
+        http://localhost:8888/notebooks/Untitled1.ipynb?kernel_name=python3
+
+
+2.动态语言和静态语言的区别
+    动态语言中，可以动态的指定并且赋值给一个变量而不需要指定其类型或者空间等，虽然这么说不太准确，但是理解起来容易点
+
+
+3.深入类和对象
+    鸭子类型和多态
+    抽象基类(abc模块)
+    isinstance 和 type 区别
+    类变量和实例变量
+    类和实例属性的查找顺序-mro查找
+    类方法、静态方法、实例方法
+    数据封装和私有属性
+    对象自省机制
+    super 遵循 mro 属性查找方式，并不是真的调用父类
+    mixin 混合继承 案例:django rest framework
+    with 语句
+    contextlib 简化上下文管理器
+
+    ***** 规范化 Python面向对象编程
+
+4.序列类
+    序列类型分类
+        容器序列        list tuple deque
+        扁平序列        str bytes bytearray array.array
+        可变序列        list deque bytearray array
+        不可变          str tuple bytes
+
+    python 中支持的序列类型
