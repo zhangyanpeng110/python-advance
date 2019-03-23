@@ -5,7 +5,7 @@ Python 是基于协议进行编程的
     ipython
     notebook        浏览器实现交互，比原生的python交互模式更人性化
 
-    pip install 安装
+    pip install -i https://pypi.douban.com/simple/
 
     启动：
         ipython notebook

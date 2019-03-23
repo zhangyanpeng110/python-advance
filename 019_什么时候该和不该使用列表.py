@@ -2,7 +2,6 @@
 
 """
     array
-
     deque
 
 补充概念：

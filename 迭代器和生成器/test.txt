@@ -1,0 +1,27 @@
+mode is an optional string that specifies the mode in which the file
+is opened. {|}It defaults to 'r' which means open for reading in text
+mode. {|}Other common values are 'w' for writing (truncating the file if
+it already exists), 'x' for creating and writing to a new file, and
+'a' for appending (which on some Unix systems, means that all writes
+append to the end of the file regardless of the current seek position).{|}
+In text mode, if encoding is not specified the encoding used is platform
+dependent: locale.getpreferredencoding(False) is called to get the
+current locale encoding. {|}(For reading and writing raw bytes use binary
+mode and leave encoding unspecified.) The available modes are:
+========= ===============================================================
+Character Meaning
+--------- ---------------------------------------------------------------
+'r'       open for reading (default)
+'w'       open for writing, truncating the file first
+'x'       create a new file and open it for writing
+'a'       open for writing, appending to the end of the file if it exists
+'b'       binary mode
+'t'       text mode (default)
+'+'       open a disk file for updating (reading and writing)
+'U'       universal newline mode (deprecated)
+========= ===============================================================
+
+{|}The default mode is 'rt' (open for reading text). For binary random
+access, the mode 'w+b' opens and truncates the file to 0 bytes, while
+'r+b' opens the file without truncation. {|}The 'x' mode implies 'w' and
+raises an `FileExistsError` if the file already exists.
