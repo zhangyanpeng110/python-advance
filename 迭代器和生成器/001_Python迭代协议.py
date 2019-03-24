@@ -38,7 +38,7 @@ def func2():
 # python.exe 使用 PyEval_EvalFramEx(c函数)去执行 func 函数
 # 1.首先创建一个栈帧
 #   Python中一切皆对象指的是 栈帧对象、字节码对象
-#   当 func 调用子函数 func2 ，优惠创建一个栈帧，所有的栈帧都分配到堆内存上，所以这就决定了
+#   当 func 调用子函数 func2 ，首先创建一个栈帧，所有的栈帧都分配到堆内存上，所以这就决定了
 #   调用者而存在，
 import dis
 

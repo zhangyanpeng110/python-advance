@@ -11,18 +11,7 @@ bisect.insort(list_, 1)
 bisect.insort(list_, 100)
 bisect.insort(list_, 30)
 
-
 print(list_)
 
-
-# collections 中可实现双向队列
+# collections 中可实现双端队列
 from collections import deque
-
-
-
-
-
-
-
-
-

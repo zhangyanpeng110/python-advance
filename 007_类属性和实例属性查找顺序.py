@@ -32,7 +32,7 @@ class C(object):
 
 class D(C, B):
     # class D(B, C):
-    # 继承的先后顺序 影像查找属性的顺序
+    # 继承的先后顺序 影响查找属性的顺序
     # name = 'object D'
 
     def __init__(self, name):
