@@ -5,6 +5,8 @@ Python 是基于协议进行编程的
     ipython
     notebook        浏览器实现交互，比原生的python交互模式更人性化
 
+    第三方包连接：
+        http://www.lfd.uci.edu/~gohlke/pythonlibs/
     pip install -i https://pypi.douban.com/simple/
 
     启动：

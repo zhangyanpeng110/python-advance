@@ -1,0 +1,64 @@
+001
+    def create_task(self, coro):
+        raise NotImplementedError
+
+002
+	events.get_event_loop()
+	def get_event_loop():
+		"""Return an asyncio event loop.
+
+		When called from a coroutine or a callback (e.g. scheduled with call_soon
+		or similar API), this function will always return the running event loop.
+
+		If there is no running event loop set, the function will return
+		the result of `get_event_loop_policy().get_event_loop()` call.
+		"""
+		current_loop = _get_running_loop()
+		if current_loop is not None:
+			return current_loop
+		return get_event_loop_policy().get_event_loop()
+
+003
+	def ensure_future(coro_or_future, *, loop=None):
+		"""Wrap a coroutine or an awaitable in a future.
+
+		If the argument is a Future, it is returned directly.
+		"""
+		if futures.isfuture(coro_or_future):
+			if loop is not None and loop is not coro_or_future._loop:
+				raise ValueError('loop argument must agree with Future')
+			return coro_or_future
+		elif coroutines.iscoroutine(coro_or_future):
+			if loop is None:
+				loop = events.get_event_loop()
+			task = loop.create_task(coro_or_future)
+			if task._source_traceback:
+				del task._source_traceback[-1]
+			return task
+		elif compat.PY35 and inspect.isawaitable(coro_or_future):
+			return ensure_future(_wrap_awaitable(coro_or_future), loop=loop)
+		else:
+			raise TypeError('An asyncio.Future, a coroutine or an awaitable is '
+							'required')
+		
+004 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
