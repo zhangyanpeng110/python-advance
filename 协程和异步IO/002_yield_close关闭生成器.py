@@ -17,6 +17,9 @@ if __name__ == "__main__":
     generator = generator_func()
     print('return data ===>>>', next(generator))
     generator.close()
+    # 关闭生成器之后，再调用next()
+    # 报错 StopIteration
+    print(next(generator))
     print("gen closed")
 
     # GeneratorExit是继承自BaseException， Exception

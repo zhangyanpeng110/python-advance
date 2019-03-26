@@ -16,7 +16,8 @@ task在协程中的设计：
     task的出现就是解决这个问题，task是future的子类，task内部在init中 self._loop.call_soon(self._step)
     加载的时候调用了内部定义的 def _step() 方法 以及在该方法内自动向协程 调用了 send(None) 方法启动了协程
 
+# 将一个函数包装成另外一个函数
+from functools import partial
 
 
-
-
+https://docs.python.org/3.6/library/asyncio-task.html#example-future-with-run-until-complete

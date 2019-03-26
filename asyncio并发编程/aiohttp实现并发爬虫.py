@@ -5,7 +5,6 @@
         1.爬取
         2.去重
         3.入库
-
 """
 import asyncio
 import re
@@ -14,5 +13,4 @@ import aiomysql
 from pyquery import PyQuery
 
 
-base_url = "http://www.jobbole.com/"
 
